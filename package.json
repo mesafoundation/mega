@@ -1,0 +1,17 @@
+{
+  "name": "mesa-server",
+  "version": "1.0.0",
+  "description": "Simple gateway server using Mesa",
+  "main": "index.js",
+  "repository": "https://github.com/neoncloth/mesa-gateway-server",
+  "author": "William Gibson <william@tired.io>",
+  "license": "MIT",
+  "scripts": {
+	  "start": "node ."
+  },
+  "dependencies": {
+    "@cryb/mesa": "^1.2.9",
+    "dotenv": "^8.2.0",
+    "jsonwebtoken": "^8.5.1"
+  }
+}
