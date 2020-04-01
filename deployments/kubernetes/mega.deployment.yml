@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mega
+  labels:
+    app: mega
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mega
+  template:
+    metadata:
+      labels:
+        app: mega
+    spec:
+      containers:
+        - image: 
+          name: mega
+          imagePullPolicy: Always
+          envFrom:
+            - secretRef:
+                name: mega-env-secret
+          env:
+            - name: K8S_POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+          ports:
+            - containerPort: 4500
+              name: http-server
+      imagePullSecrets:
+        - name: gitlab-registry-regcred-mega

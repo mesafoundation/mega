@@ -27,7 +27,7 @@ const parseSentinels = sentinels =>
 
 module.exports.parseConfig = () => ({
 	port: process.env.MESA_PORT ? parseInt(process.env.MESA_PORT) : 4500,
-	namespace: process.env.MESA_NAMESPACE || 'gateway',
+	namespace: process.env.MESA_NAMESPACE || undefined,
 	redis: getOptions(),
 
 	client: {

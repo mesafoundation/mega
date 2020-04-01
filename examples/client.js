@@ -9,10 +9,8 @@ client.on('connected', async () => {
 	console.log('Connected to Mega')
 	
 	const token = sign({ id: Math.round(Math.random() * 1000) }, process.env.WS_KEY)
-    await client.authenticate({ token })
+	await client.authenticate({ token })
 	console.log('Authenticated with Mega')
-	
-	setInterval(() => client.send(new Message(0, {}, 'PING')), 1000)
 })
 
 client.on('message', (data, type) =>
