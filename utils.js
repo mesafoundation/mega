@@ -44,7 +44,7 @@ module.exports.parseConfig = () => ({
 	},
 	reconnect: {
 		enabled: process.env.RECONNECTS_ENABLED === 'true' ? true : false,
-		interval: process.env.RECONNECT_INTERVAL ? parseInt(process.env.RECONNECT_INTERVAL) : 50000
+		interval: process.env.RECONNECT_INTERVAL ? parseInt(process.env.RECONNECT_INTERVAL) : 5000
 	},
 	authentication: {
 		timeout: process.env.AUTH_TIMEOUT ? parseInt(process.env.RECONNECT_INTERVAL) : 10000,
