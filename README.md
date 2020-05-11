@@ -1,16 +1,10 @@
-_**Mega** — Gateway server utilising Mesa_
+# mega
+Gateway server utilising Mesa
 
+## Introduction
 Mega is a simple Gateway server intended for deployment alongside an internal API or set of microservices. It utilises [Mesa](https://github.com/crybapp/mesa), a scalable, robust and modern WebSocket wrapper.
 
 While most configuration can happen inside the `.env` file, Mega can be customised in any way from the single `index.js` file. Further customisation options are available [here](https://github.com/crybapp/mesa#server-side).
-
-## Docs
-* [Setting Up Mega](#setting-up-mega)
-	* [Installation](#installation)
-	* [Setup](#setup)
-* [Usage](#usage)
-	* [Dispatching Events to Mega](#dispatching-events-to-mega)
-* [Questions / Issues](#questions--issues)
 
 ## Setting Up Mega
 Mega is simple to setup. Instructions for manual setup are provided here, or you can wait for us to provide instructions for a Docker or Kubernetes-based setup.
@@ -101,6 +95,26 @@ The latest Docker image for Mega is kept on the GitHub Package Registry. See [he
 
 ### Kubernetes
 Mega provides an example set of Kubernetes deployment files under the `deployment/kubernetes` directory. -->
+
+## Troubleshooting
+### Kubernetes
+#### ingress-nginx
+When using Mega with `ingress-nginx`, some changes need to be made to support long-lasting connections.
+
+By default, `ingress-nginx` will time out WebSocket connections after 60 seconds. If your implementation of Mega keeps connections under 60 seconds then you can stop reading.
+
+If you rely on longer connections, add the following options to your `ingress-nginx` configuration using a ConfigMap or via Annotations:
+```yml
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "3600" # 1 hour
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "3600" # 1 hour
+```
+
+Learn more about this [here](https://kubernetes.github.io/ingress-nginx/user-guide/miscellaneous/#websockets)
 
 ## Questions / Issues
 If you have an issues with Mega, please either open a GitHub issue or contact a maintainer
