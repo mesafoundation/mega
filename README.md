@@ -97,6 +97,15 @@ The latest Docker image for Mega is kept on the GitHub Package Registry. See [he
 Mega provides an example set of Kubernetes deployment files under the `deployment/kubernetes` directory. -->
 
 ## Troubleshooting
+### Cloudflare
+By default, Cloudflare terminates dormant WebSocket connections after 100 seconds. To bypass this, either upgrade your site to an 'Enterprise' plan, or enable heartbeats in your environment variables:
+```yml
+HEARTBEATS_ENABLED: 'true'
+HEARTBEAT_INTERVAL: '10000'
+```
+
+Learn more about this [here](https://community.cloudflare.com/t/cloudflare-websocket-timeout/5865)
+
 ### Kubernetes
 #### ingress-nginx
 When using Mega with `ingress-nginx`, some changes need to be made to support long-lasting connections.
