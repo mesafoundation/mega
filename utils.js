@@ -37,6 +37,10 @@ module.exports.parseConfig = () => ({
 		storeMessages: process.env.STORE_MESSAGES === 'true' ? true : false
 	},
 
+	sync: {
+		enabled: process.env.SYNC_ENABLED === 'true' ? true : false,
+		redeliveryInterval: process.env.SYNC_REDELIVERY_INTERVAL ? parseInt(process.env.SYNC_REDELIVERY_INTERVAL) : 0
+	},
 	heartbeat: {
 		enabled: process.env.HEARTBEATS_ENABLED === 'true' ? true : false,
 		interval: process.env.HEARTBEAT_INTERVAL ? parseInt(process.env.HEARTBEAT_INTERVAL) : 10000,
