@@ -52,6 +52,7 @@ module.exports.parseConfig = () => ({
 	},
 	authentication: {
 		timeout: process.env.AUTH_TIMEOUT ? parseInt(process.env.RECONNECT_INTERVAL) : 10000,
+		required: process.env.AUTH_REQUIRED === 'true' ? true : false,
 		sendUserObject: process.env.AUTH_SEND_USER_OBJECT !== 'false' ? true : false,
 		disconnectOnFail: process.env.AUTH_DISCONNECT_ON_FAIL !== 'false' ? true : false,
 		storeConnectedUsers: process.env.AUTH_STORE_CONNECTED_USERS !== 'false' ? true : false
