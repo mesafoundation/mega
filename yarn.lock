@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@cryb/mesa@^1.3.8":
-  version "1.3.8"
-  resolved "https://registry.yarnpkg.com/@cryb/mesa/-/mesa-1.3.8.tgz#ee62d495c1f597f01c9924e555d0ea97c8fe04c3"
-  integrity sha512-EWJE0wWftm5lbznS5qfPA0OAMKPp2fJkkOZcIwZRb/Hz8hA5Hr9XvncpYA9wBTX8twphjI9EDZjtOAAg0tnJOg==
+"@cryb/mesa@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@cryb/mesa/-/mesa-1.4.0.tgz#ce59a26fa766d5c41983a5aa1c4c35ddbd447ff6"
+  integrity sha512-1jHj7eI33kG0TYUk6nePprWSIxXMFTUAHJCPYgqRd+B/pfuz5tE+XaKtP/fCmEvCp/oNfktAu1OZ8tfwm7eGZQ==
   dependencies:
     ioredis "^4.14.1"
     ws "^7.2.1"

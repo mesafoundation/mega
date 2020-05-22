@@ -41,6 +41,10 @@ module.exports.parseConfig = () => ({
 		enabled: process.env.SYNC_ENABLED === 'true' ? true : false,
 		redeliveryInterval: process.env.SYNC_REDELIVERY_INTERVAL ? parseInt(process.env.SYNC_REDELIVERY_INTERVAL) : 0
 	},
+	portal: {
+		enabled: process.env.PORTALS_ENABLED === 'true' ? true : false,
+		distributeLoad: process.env.PORTAL_DISTRIBUTE_LOAD !== 'false' ? true : false
+	},
 	heartbeat: {
 		enabled: process.env.HEARTBEATS_ENABLED === 'true' ? true : false,
 		interval: process.env.HEARTBEAT_INTERVAL ? parseInt(process.env.HEARTBEAT_INTERVAL) : 10000,
