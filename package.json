@@ -10,7 +10,7 @@
 		"start": "node ."
 	},
 	"dependencies": {
-		"@cryb/mesa": "^1.4.3",
+		"@cryb/mesa": "^1.4.7",
 		"dotenv": "^8.2.0",
 		"jsonwebtoken": "^8.5.1"
 	}

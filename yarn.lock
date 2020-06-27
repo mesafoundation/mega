@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@cryb/mesa@^1.4.3":
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/@cryb/mesa/-/mesa-1.4.3.tgz#565f5c4eaf41f8d80de849c8c220017327215254"
-  integrity sha512-kv6ncqZ2QgbTYvAbKCdY+0F9NCsBQQYUwuRCbn9hsEXJcbaZh6gGqiCJUS97xS7o8s7lRUVJujMzD+P5mIAo6w==
+"@cryb/mesa@^1.4.7":
+  version "1.4.7"
+  resolved "https://registry.yarnpkg.com/@cryb/mesa/-/mesa-1.4.7.tgz#ff37f5956932977e1748f4e403620fbc04b8c2e5"
+  integrity sha512-ybMjn4SUqwxWuB67YesHLDrzhLXJf8S8saLffV7qHnV/knZGnAXD50KRd9ICfgKUbYA/pnxecx5YyyinC5NOMg==
   dependencies:
     death "^1.1.0"
     ioredis "^4.14.1"
